@@ -1,0 +1,5 @@
+# Tekscan ELF connector — Linux-native FTDI stack
+# The ELF handle is an FTDI device (USB 11DA:0012, D2XX / FT245 FIFO).
+pyftdi>=0.57      # D2XX-equivalent: open the handle by custom VID/PID over libusb
+pyusb>=1.2        # libusb backend used by pyftdi
+pyserial>=3.5     # fallback transport if the handle is bound via kernel ftdi_sio

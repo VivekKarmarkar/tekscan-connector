@@ -1,0 +1,12 @@
+# Grant non-root access to the Tekscan ELF handle so pyftdi/libusb (and the
+# ftdi_sio ttyUSB fallback) can open it without sudo.
+#
+# Install:
+#   sudo cp udev/99-tekscan.rules /etc/udev/rules.d/
+#   sudo udevadm control --reload-rules && sudo udevadm trigger
+#
+# 0x11DA = Tekscan. PIDs: 0012=ELF handle, 0020=Evolution, 0028=Seat, 0018=Genesis.
+# uaccess tags it for the logged-in user (systemd-logind); plugdev+0664 is the
+# classic fallback; covering all 0x11DA PIDs keeps sibling handles working too.
+SUBSYSTEM=="usb", ATTR{idVendor}=="11da", MODE="0664", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="11da", MODE="0664", GROUP="plugdev", TAG+="uaccess"

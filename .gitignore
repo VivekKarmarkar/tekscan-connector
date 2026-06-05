@@ -1,0 +1,54 @@
+# ── Python env / cache ─────────────────────────────────────────────
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ── PROPRIETARY THIRD-PARTY SOFTWARE — never publish (Tekscan ELF) ──
+# vendor/ holds the copyrighted Tekscan installer + ElfMPort.exe + DLLs/CABs.
+vendor/
+*.exe
+*.dll
+*.cab
+
+# ── Reverse-engineering toolchain + decompiled proprietary code ────
+# Keep re/FINDINGS.md and re/scripts/*.java (our own work); exclude the rest.
+re/ghidra/
+re/jdk21/
+re/project/
+re/logs/
+re/*.log
+
+# ── Large ML model weights ─────────────────────────────────────────
+sam_assets/
+*.pt
+*.pth
+*.onnx
+
+# ── Video-build working dir + large media ──────────────────────────
+meta/
+video/proj_tmp/
+video/audio/
+video/slides/
+video/frames/
+*.mp4
+*.mov
+*.mp3
+*.wav
+*.m4a
+*.oga
+
+# ── Third-party product marketing images (GelSight) — keep PDFs ────
+gelsight_assets/
+
+# ── Session / capture artifacts ────────────────────────────────────
+captures/
+probe/results/
+*.bin
+
+# ── Personal ───────────────────────────────────────────────────────
+affection.md
+
+# ── OS / editor ────────────────────────────────────────────────────
+.DS_Store
+*.swp

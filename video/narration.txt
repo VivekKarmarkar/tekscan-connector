@@ -1,0 +1,6 @@
+1	Let's connect your Tekscan force sensor. Three pieces matter here — the handle, the sensor, and your laptop. Here's exactly what goes where.
+2	Start with the handle — the small unit with the blue button and the attached U S B cable. Plug that cable into any U S B port on your laptop.
+3	Now the sensor — a thin, flexible strip. One end has a round pad; the other has a flat tab that plugs into the handle. Look for the word UP printed near the tab.
+4	Hold the sensor so UP faces the same side as the blue button. Press and hold the blue button, slide the tab in until it stops, then let go.
+5	On Windows you would hear a beep. On your Linux laptop you won't — and that's completely fine. I'll confirm the connection from the laptop side.
+6	Last thing — keep your one thousand gram weight handy. Once it's plugged in, I'll run a quick capture while you rest the weight on the round pad. That's it!
