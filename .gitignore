@@ -49,6 +49,15 @@ probe/results/
 # ── Personal ───────────────────────────────────────────────────────
 affection.md
 
+# ── Downloaded papers (copyrighted PDFs + large) — never publish ───
+papers/
+
+# ── Claude Code session artifacts / workspace ──────────────────────
+.claude/
+
+# ── Debug screenshots ──────────────────────────────────────────────
+images/
+
 # ── OS / editor ────────────────────────────────────────────────────
 .DS_Store
 *.swp

@@ -58,11 +58,16 @@ def reader():
                 now = time.time()
                 if d:
                     last_data = now; count += len(d)
+                    # 0xFF is the device's "not-ready" sentinel — it only appears when the
+                    # handle stutters out of clean streaming. Drop it so it is never drawn as
+                    # a fake 0<->255 sawtooth. Real force bytes (the video's smooth hills) pass through.
+                    vals = [b for b in d if b != 0xFF]
                     with LOCK:
-                        for b in d:
+                        for b in vals:
                             STATE["samples"].append((round(now - t0, 3), b))
-                        STATE["raw"] = d[-1]
-                        STATE["peak"] = max(STATE["peak"], max(d))
+                        if vals:
+                            STATE["raw"] = vals[-1]
+                            STATE["peak"] = max(STATE["peak"], max(vals))
                 elif now - last_data > STALL:
                     with LOCK:
                         STATE["status"] = "reconnecting…"; STATE["connected"] = False; STATE["fps"] = 0.0
